@@ -13,17 +13,16 @@ const App = () => {
     backgroundColor: "pink"
   }
 
-  const headerStyle = {
-    backgroundColor: "red"
-  }
   
   
   return (
     <>
-    <header style={headerStyle}>
-        <img src={require("./images/logo_test.png")}></img>
+    <header>
+        <img className='logo' src={require("./images/logo_test.png")}></img>
         <h1>Risk Radar</h1>
-
+        <span><a href={<Print />}>Denver</a></span>
+        <span><a>Tampa</a></span>
+        <span><a>Los Angeles</a></span>
       </header>
    
     <div style={style}>

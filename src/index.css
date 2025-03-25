@@ -13,6 +13,21 @@ code {
 }
 
 header {
-  height: 200px;
+  height: 125px;
+  width: 100%;
+  background-color: salmon;
+  display: inline-flex;
+  position: sticky;
 
+}
+
+.logo {
+  height: 100px;
+  margin: 10px;
+  margin-left: 40px;
+}
+
+
+h1 {
+  font-size: 60px;
 }
