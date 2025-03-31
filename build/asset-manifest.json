@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/risk-radar/static/css/main.545f1006.css",
+    "main.js": "/risk-radar/static/js/main.98efaaa5.js",
+    "static/js/453.5d1e92a9.chunk.js": "/risk-radar/static/js/453.5d1e92a9.chunk.js",
+    "static/media/logo_test.png": "/risk-radar/static/media/logo_test.46809797cba9c061cea8.png",
+    "index.html": "/risk-radar/index.html",
+    "main.545f1006.css.map": "/risk-radar/static/css/main.545f1006.css.map",
+    "main.98efaaa5.js.map": "/risk-radar/static/js/main.98efaaa5.js.map",
+    "453.5d1e92a9.chunk.js.map": "/risk-radar/static/js/453.5d1e92a9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.545f1006.css",
+    "static/js/main.98efaaa5.js"
+  ]
+}
