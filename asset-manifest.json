@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/risk-radar/static/css/main.545f1006.css",
-    "main.js": "/risk-radar/static/js/main.daf8d648.js",
+    "main.css": "/risk-radar/static/css/main.88e2bb9c.css",
+    "main.js": "/risk-radar/static/js/main.e0a2b34d.js",
     "static/js/453.5d1e92a9.chunk.js": "/risk-radar/static/js/453.5d1e92a9.chunk.js",
     "static/media/logo_test.png": "/risk-radar/static/media/logo_test.46809797cba9c061cea8.png",
     "index.html": "/risk-radar/index.html",
-    "main.545f1006.css.map": "/risk-radar/static/css/main.545f1006.css.map",
-    "main.daf8d648.js.map": "/risk-radar/static/js/main.daf8d648.js.map",
+    "main.88e2bb9c.css.map": "/risk-radar/static/css/main.88e2bb9c.css.map",
+    "main.e0a2b34d.js.map": "/risk-radar/static/js/main.e0a2b34d.js.map",
     "453.5d1e92a9.chunk.js.map": "/risk-radar/static/js/453.5d1e92a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.545f1006.css",
-    "static/js/main.daf8d648.js"
+    "static/css/main.88e2bb9c.css",
+    "static/js/main.e0a2b34d.js"
   ]
 }
