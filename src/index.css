@@ -71,11 +71,21 @@ header {
 .chatbot-input {
   height: 30px;
   width: 300px;
+  background-color: lightgrey;
+  border-radius: 25px;
 }
 
 .chatbot-button {
-  height: 35px;
-  /* font-size: 20px; */
+  height: 30px;
+  position: relative;
+  right: 30px;
+  background-color: lightgray;
+  border-radius: 100%;
+  border: none;
+}
+
+.chatbot-button:hover {
+  background-color: whitesmoke;
 }
 
  .info-dropdowns {
@@ -105,14 +115,18 @@ header {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content button {
   color: black;
+  min-width: 160px;
+  background-color: #f9f9f9;
+  font-size: 20px;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  border: none;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content button:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -150,7 +164,16 @@ header {
 .calc-summary h1 {
   font-size: 30px;
 }
+.cancel-container {
+  display: flex;
+}
 
+.cancel-button {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  justify-content: center;
+}
 
 /* about us */
 

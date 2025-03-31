@@ -40,7 +40,8 @@ const App = () => {
 
       {showCalcSummary && selectedCity ? 
       <CalcSummary 
-        selectedCity={selectedCity}/> : null
+        selectedCity={selectedCity}
+        setShowCalcSummary={setShowCalcSummary}/> : null
   }
    
      </>
