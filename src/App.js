@@ -1,45 +1,98 @@
 import React from 'react';
-import Print from "./components/test.js"
-
-
+import Header from "./components/header.js"
+import Map from "./components/map.js"
+import Methodology from './components/method-page.js';
+import AboutUs from './components/about-us.js';
+import CalcSummary from './components/calcSummary.js';
 
 
 
 const App = () => {
+
+  const [methodsClicked, setMethodsClicked] = React.useState(false)
+  const [aboutUsClicked, setAboutUsClicked] = React.useState(false)
+  const [mapClicked, setMapClicked] = React.useState(true)
   
-  const style = {
-    width: "100px",
-    height: "100px",
-    backgroundColor: "pink"
+  const [selectedCity, setSelectedCity] = React.useState("")
+  const [showCalcSummary, setShowCalcSummary] = React.useState(false)
+
+
+
+  if (mapClicked) {
+    return (
+      <>
+    <Header
+    methodsClicked={methodsClicked}
+    setMethodsClicked={setMethodsClicked}
+    aboutUsClicked={aboutUsClicked}
+    setAboutUsClicked={setAboutUsClicked}
+    mapClicked={mapClicked}
+    setMapClicked={setMapClicked}
+    showCalcSummary={showCalcSummary}
+    setShowCalcSummary={setShowCalcSummary}
+    setSelectedCity={setSelectedCity}
+
+     />
+    <Map
+    methodsClicked={methodsClicked}
+    aboutUsClicked={aboutUsClicked}
+    />
+
+      {showCalcSummary && selectedCity ? 
+      <CalcSummary 
+        selectedCity={selectedCity}/> : null
+  }
+   
+     </>
+    ) 
+  } else if (methodsClicked) {
+    
+    return (
+      <>
+      <Header
+      methodsClicked={methodsClicked}
+      setMethodsClicked={setMethodsClicked}
+      aboutUsClicked={aboutUsClicked}
+      setAboutUsClicked={setAboutUsClicked}
+      mapClicked={mapClicked}
+      setMapClicked={setMapClicked}
+      showCalcSummary={showCalcSummary}
+      setShowCalcSummary={setShowCalcSummary}
+      setSelectedCity={setSelectedCity}
+      
+       />
+     
+      <Methodology />
+    
+      </>
+    );
+
+  }
+  else if (aboutUsClicked) {
+    
+    return (
+      <>
+      <Header
+      methodsClicked={methodsClicked}
+      setMethodsClicked={setMethodsClicked}
+      aboutUsClicked={aboutUsClicked}
+      setAboutUsClicked={setAboutUsClicked}
+      mapClicked={mapClicked}
+      setMapClicked={setMapClicked}
+      showCalcSummary={showCalcSummary}
+      setShowCalcSummary={setShowCalcSummary}
+      setSelectedCity={setSelectedCity}
+       />
+     
+      <AboutUs />
+    
+      </>
+    );
+
   }
 
   
-  
-  return (
-    <>
-    <header>
-        <img className='logo' src={require("./images/logo_test.png")}></img>
-        <h1>Risk Radar</h1>
-        <span><a href={<Print />}>Denver</a></span>
-        <span><a>Tampa</a></span>
-        <span><a>Los Angeles</a></span>
-      </header>
-   
-    <div style={style}>
-      
-      
-       <h2>Happy Coding!!</h2>
-       <h3>This is working!</h3>
-    </div>
-    <Print /> 
-    </>
-    
-  );
 };
-
-
-
-
 
 
 
