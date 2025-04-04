@@ -164,7 +164,7 @@ html, body {
   
   .dropdown:hover .dropdown-content {
     display: block;
-    transform: translate(-30px, -30px);
+    transform: translate(-0px, +0px);
     border-radius: 8px;
     overflow: hidden;
     background-color: white;        
