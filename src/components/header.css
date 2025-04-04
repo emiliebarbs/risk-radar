@@ -1,27 +1,43 @@
 /* header.css */
 
-header {
+
+/* Reset default spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+  header {
+    height: 100px;
     font-family: 'DM Sans', sans-serif;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;      
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem;
+    padding: 0rem 1rem;
+    line-height: 1;
     gap: 1rem;
     box-shadow: 0 8px 16px rgba(255, 105, 97, 0.4);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;   
   }
+
   
   .logo-title {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     min-width: 400px;
+    flex: 0 0 auto;
   }
   
   .logo {
-    height: 80px;
+    height: 40px; 
     cursor: pointer;
-    transform: translateY(-30px);
+    padding: 0;
+    display: block;
     box-shadow: 0 8px 16px rgba(56, 43, 43, 0.4);
 
   }
@@ -30,14 +46,15 @@ header {
   }
   
   .light-italic {
-    transform: translateY(-30px);
     font-family: 'DM Sans', sans-serif;
     font-weight: 675;
     font-style: italic;
-    font-size: 80px;
+    font-size: 36px;
     cursor: pointer;
     white-space: nowrap;
     align-items: center;
+    line-height: 1;
+    padding: 0;
   }
   
   .chatbot {
@@ -47,45 +64,62 @@ header {
     gap: 0.5rem;
     flex-wrap: nowrap;
     max-width: 550px;
-    width: 100%;
-    transform: translateY(-25px);
+    width: auto;
+    flex: 0 0 auto;
+  }
 
+  .chatbot-wrapper {
+    position: relative;
+    width: fit-content;
   }
 
   .chatbot-input {
     font-family: 'DM Sans', sans-serif;
+    line-height: 1;
     padding: 0.5rem;
     padding-right: 2.5rem;
-    flex: 1;
-    min-width: 600px;
+    height:17px;
+    width: 600px;
     position: relative;
-    background-color: #cdbcbca0;
+    background-color: #ffaca1;
     color: black;
-    border: 2px solid black;
-    border-radius: 4px;
+    border: none;
+    border-radius: 999px;
   }
+
+  .chatbot-input::placeholder {
+    color: black;
+    opacity: 1;
+  }
+  
   .chatbot-button {
     position: absolute;
     top: 50%; 
-    right: -95px;
+    right: 0.5rem;
     transform: translateY(-50%);
-    background-color: #dddddd58;
+    background-color: #ffffff;
     border: none;
     cursor: pointer;
     padding: 0.4rem 0.6rem;
-    height: 32px;
+    height: 24px;
+    width: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
+  .chatbot-button:hover {
+    background-color: #e0e0e0;
   }
   
   .info-dropdowns {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;   
+    align-items: center;
     justify-content: flex-end;
+    gap: 1rem;
     min-width: 300px;
+    flex: 0 0 auto;
   }
   
   .dropbtn {
@@ -94,13 +128,12 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    font-style: italic;
     color: black;
     border-radius: 8px;
-    transform: translate(-30px, -30px);  
+    padding: 0.2rem 0.4rem;
+    line-height: 1;
   }
 
   .dropdown .dropbtn:hover {
@@ -116,14 +149,16 @@ header {
   .dropdown-content button {
     font-family: 'DM Sans', sans-serif;
     background: white;
+    border: none;
     border-radius: 8px;
     padding: 0.5rem 1rem;
     text-align: left;
     width: 100%;
     cursor: pointer;
-    background-color: white; 
+    font-size: 1rem;
     color: black;
   }
+  
 
   
   
@@ -137,19 +172,6 @@ header {
 
 
   }
-  
-  .dropdown-content button {
-    font-family: 'DM Sans', sans-serif;
-    background: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    text-align: left;
-    width: 100%;
-    cursor: pointer;
-    font-size: 1rem;
-    
-  }
-
   
   @media screen and (max-width: 768px) {
     header {
@@ -174,6 +196,9 @@ header {
     }
   
     .chatbot-button {
+      position: static;
+      transform: none;
+      margin-top: 0.5rem;
       align-self: flex-end;
     }
   
@@ -181,6 +206,7 @@ header {
       flex-direction: column;
       gap: 0.5rem;
       width: 100%;
+      
     }
   
     .dropbtn {
@@ -193,5 +219,4 @@ header {
       box-shadow: none;
     }
   }
-  
   
