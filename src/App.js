@@ -4,6 +4,7 @@ import Map from "./components/map.js"
 import Methodology from './components/method-page.js';
 import AboutUs from './components/about-us.js';
 import CalcSummary from './components/calcSummary.js';
+import Calculator from './components/calculator.js';
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
   
   const [selectedCity, setSelectedCity] = React.useState("")
   const [showCalcSummary, setShowCalcSummary] = React.useState(false)
+  const [categoryClicked, setCategoryClicked] = React.useState("")
 
 
 
@@ -31,6 +33,7 @@ const App = () => {
     showCalcSummary={showCalcSummary}
     setShowCalcSummary={setShowCalcSummary}
     setSelectedCity={setSelectedCity}
+    setCategoryClicked={setCategoryClicked}
 
      />
     <Map
@@ -38,12 +41,20 @@ const App = () => {
     aboutUsClicked={aboutUsClicked}
     />
 
-      {showCalcSummary && selectedCity ? 
+      {showCalcSummary && selectedCity ? (
+      <>
+      <Calculator 
+      selectedCity={selectedCity}
+      setCategoryClicked={setCategoryClicked}
+      />
       <CalcSummary 
         selectedCity={selectedCity}
-        setShowCalcSummary={setShowCalcSummary}/> : null
+        setShowCalcSummary={setShowCalcSummary}
+        categoryClicked={categoryClicked}/>
+      </> 
+            ): null
+
   }
-   
      </>
     ) 
   } else if (methodsClicked) {
@@ -60,6 +71,7 @@ const App = () => {
       showCalcSummary={showCalcSummary}
       setShowCalcSummary={setShowCalcSummary}
       setSelectedCity={setSelectedCity}
+      setCategoryClicked={setCategoryClicked}
       
        />
      
@@ -83,6 +95,7 @@ const App = () => {
       showCalcSummary={showCalcSummary}
       setShowCalcSummary={setShowCalcSummary}
       setSelectedCity={setSelectedCity}
+      setCategoryClicked={setCategoryClicked}
        />
      
       <AboutUs />

@@ -7,7 +7,7 @@ const Header = ({
   aboutUsClicked, setAboutUsClicked,
   mapClicked, setMapClicked,
   showCalcSummary, setShowCalcSummary,
-  setSelectedCity 
+  setSelectedCity, setCategoryClicked
 }) => {
 
   const clickMethods = () => {
@@ -31,6 +31,7 @@ const Header = ({
     if (city) {
       setShowCalcSummary(true);
       setSelectedCity(city);
+      setCategoryClicked("")
     }
   };
 
