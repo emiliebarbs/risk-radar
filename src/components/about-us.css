@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.about-us-placeholder {
+    font-family: 'DM Sans', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .about-us-placeholder h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .about-us-placeholder h3 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-details {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .about-us-details p {
+    margin-bottom: 15px;
+  }
+  
+  .about-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .about-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .about-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #333;
+  }
+  
