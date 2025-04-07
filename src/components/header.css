@@ -21,7 +21,9 @@ html, body {
     box-shadow: 0 8px 16px rgba(255, 105, 97, 0.4);
     width: 100%;
     max-width: 100%;
-    overflow-x: clip;   
+    overflow-x: clip; 
+    position: absolute; 
+    z-index: 9999; 
   }
 
   
@@ -158,21 +160,15 @@ html, body {
     font-size: 1rem;
     color: black;
   }
-
-  .dropdown-content {
-    position: absolute;
-    z-index: 9999;
-  }
   
   .dropdown:hover .dropdown-content {
     display: block;
     position: absolute;
-    z-index: 9999;
-    transform: translate(-0px, +0px);
     border-radius: 8px;
     overflow: hidden;
     background-color: white;        
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 9999;
 
 
   }
