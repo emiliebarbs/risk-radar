@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/risk-radar/static/css/main.0531af1e.css",
+    "main.css": "/risk-radar/static/css/main.19282955.css",
     "main.js": "/risk-radar/static/js/main.4d1180e1.js",
     "static/js/453.5d1e92a9.chunk.js": "/risk-radar/static/js/453.5d1e92a9.chunk.js",
     "static/media/logo_test.png": "/risk-radar/static/media/logo_test.46809797cba9c061cea8.png",
     "index.html": "/risk-radar/index.html",
-    "main.0531af1e.css.map": "/risk-radar/static/css/main.0531af1e.css.map",
+    "main.19282955.css.map": "/risk-radar/static/css/main.19282955.css.map",
     "main.4d1180e1.js.map": "/risk-radar/static/js/main.4d1180e1.js.map",
     "453.5d1e92a9.chunk.js.map": "/risk-radar/static/js/453.5d1e92a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0531af1e.css",
+    "static/css/main.19282955.css",
     "static/js/main.4d1180e1.js"
   ]
 }
