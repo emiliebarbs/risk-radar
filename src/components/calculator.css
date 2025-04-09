@@ -25,6 +25,10 @@
     border-right: none;
 }
 
+.category-block:hover {
+    background-color: darkgray;
+}
+
 .category-block p:first-child {
     font-weight: bold;
 }
