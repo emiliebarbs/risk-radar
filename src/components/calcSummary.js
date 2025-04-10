@@ -1,142 +1,190 @@
-const CalcSummary= ({selectedCity, setShowCalcSummary, categoryClicked}) => {
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import './calcSummary.css';
 
+const CalcSummary = ({ selectedCity, setShowCalcSummary, categoryClicked }) => {
+  const initalCityStatistics = {
+    "Los Angeles": { "stat": "count" },
+    "Denver": { "stat": "count" },
+    "Tampa": { "stat": "count" }
+  };
 
-    const initalCityStatistics = {
-        "Los Angeles": {
-            "stat": "count"
-        },
-        "Denver": {
-            "stat": "count"
-        },
-        "Tampa": {
-            "stat": "count"
-        }
+  const categoryStatistics = {
+    "Los Angeles": {
+      "Crime": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value",
+      },
+      "Cost of Living": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Infastructure": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Natural Disaster": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+    },
+    "Denver": {
+      "Crime": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value",
+      },
+      "Cost of Living": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Infastructure": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Natural Disaster": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+    },
+    "Tampa": {
+      "Crime": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value",
+      },
+      "Cost of Living": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Infastructure": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      },
+      "Natural Disaster": {
+        "key1": "value",
+        "key2": "value",
+        "key3": "value"
+      }
     }
+  };
 
-    const categoryStatistics = {
-        "Los Angeles": {
-                "Crime": {
-                    "key1": "value",
-                    "key2": "value",
-                    "key3": "value",
-                    },
-                "Cost of Living": {
-                    "key1": "value",
-                    "key2": "value",
-                    "key3": "value"
-                    },
-                "Infastructure": {
-                    "key1": "value",
-                    "key2": "value",
-                    "key3": "value"
-                    },
-                "Natural Disaster": {
-                    "key1": "value",
-                    "key2": "value",
-                    "key3": "value"
-                    },
-            },      
-        "Denver": {
-            "Crime": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value",
-                },
-            "Cost of Living": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                },
-            "Infastructure": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                },
-            "Natural Disaster": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                },
-            },
-        "Tampa": {
-            "Crime": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value",
-                },
-            "Cost of Living": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                },
-            "Infastructure": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                },
-            "Natural Disaster": {
-                "key1": "value",
-                "key2": "value",
-                "key3": "value"
-                }
-            }
-        }
+  const cityData = initalCityStatistics[selectedCity];
+  const categoryData = categoryStatistics[selectedCity][categoryClicked];
 
+  const clickCancel = () => {
+    setShowCalcSummary(false);
+  };
 
+  // --- Draggable Header Setup ---
+  const containerRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-    const cityData = initalCityStatistics[selectedCity]
-    const categoryData = categoryStatistics[selectedCity][categoryClicked]
-
-        // console.log("categoryData",categoryData)
-
-    const clickCancel = () => {
-        setShowCalcSummary(false)
+  // Start dragging: calculate offset between mouse and container position
+  const handleMouseDown = useCallback((e) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      setDragging(true);
     }
+  }, []);
 
-    if (!categoryClicked) {
+  // Stop dragging
+  const handleMouseUp = useCallback(() => {
+    setDragging(false);
+  }, []);
 
-        return (
-            <>
-            <div className="calc-summary">
-                <div className="cancel-container">
-                    <h1>Risk Statistics for {selectedCity}</h1>
-                    <button className="cancel-button" onClick={clickCancel}>X</button>
-                </div>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum odio ut placerat viverra. 
-                    Maecenas nec ipsum enim. Sed id iaculis mi. Aliquam nec finibus orci. Etiam pulvinar nulla nisi, eu imperdiet felis finibus vitae. Donec varius tincidunt odio id porta. Donec luctus pulvinar velit, ac rutrum tortor tincidunt in. 
-                </p>
-                <ul className="calc-list">
-                    <li>{cityData.stat}</li>
-                    <li>{cityData.stat}</li>
-                    <li>something interesting</li>
-                </ul>
-            </div>
-            </>
-        )
+  // Move container based on current mouse position and initial offset
+  const handleMouseMove = useCallback((e) => {
+    if (dragging && containerRef.current) {
+      containerRef.current.style.position = 'absolute';
+      containerRef.current.style.left = `${e.clientX - offset.x}px`;
+      containerRef.current.style.top = `${e.clientY - offset.y}px`;
+    }
+  }, [dragging, offset]);
+
+  useEffect(() => {
+    if (dragging) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
     } else {
-        return (
-            <>
-            <div className="calc-summary">
-                <div className="cancel-container">
-                    <h1>{categoryClicked} Statistics for {selectedCity}</h1>
-                    <button className="cancel-button" onClick={clickCancel}>X</button>
-                </div>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum odio ut placerat viverra. 
-                    Maecenas nec ipsum enim. Sed id iaculis mi. Aliquam nec finibus orci. Etiam pulvinar nulla nisi, eu imperdiet felis finibus vitae. Donec varius tincidunt odio id porta. Donec luctus pulvinar velit, ac rutrum tortor tincidunt in. 
-                </p>
-                <ul className="calc-list">
-                    <li>{categoryData.key1}</li>
-                    <li>{categoryData.key1}</li>
-                    <li>{categoryData.key1}</li>
-                </ul>
-            </div>
-            </>
-        )
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
     }
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [dragging, handleMouseMove, handleMouseUp]);
+  // --- End Draggable Header Setup ---
 
-    
-}
+  const headerText = !categoryClicked
+    ? `Risk Statistics for ${selectedCity}`
+    : `${categoryClicked} Statistics for ${selectedCity}`;
+
+  // Render the component based on whether categoryClicked exists or not
+  if (!categoryClicked) {
+    return (
+      <div className="calc-summary" ref={containerRef}>
+        {/* Draggable header */}
+        <div className="draggable-header" onMouseDown={handleMouseDown}>
+          <div className="cancel-container">
+            <h1>{headerText}</h1>
+            <button className="cancel-button" onClick={clickCancel}>
+              <FontAwesomeIcon className="cancel-icon" icon={faXmark} />
+            </button>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum odio ut placerat viverra.
+          Maecenas nec ipsum enim. Sed id iaculis mi. Aliquam nec finibus orci. Etiam pulvinar nulla nisi, 
+          eu imperdiet felis finibus vitae. Donec varius tincidunt odio id porta. Donec luctus pulvinar velit, 
+          ac rutrum tortor tincidunt in.
+        </p>
+        <ul className="calc-list">
+          <li>{cityData.stat}</li>
+          <li>{cityData.stat}</li>
+          <li>something interesting</li>
+        </ul>
+      </div>
+    );
+  } else {
+    return (
+      <div className="calc-summary" ref={containerRef}>
+        {/* Draggable header */}
+        <div className="draggable-header" onMouseDown={handleMouseDown}>
+          <div className="cancel-container">
+            <h1>{headerText}</h1>
+            <button className="cancel-button" onClick={clickCancel}>
+              <FontAwesomeIcon className="cancel-icon" icon={faXmark} />
+            </button>
+          </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum odio ut placerat viverra.
+          Maecenas nec ipsum enim. Sed id iaculis mi. Aliquam nec finibus orci. Etiam pulvinar nulla nisi, 
+          eu imperdiet felis finibus vitae. Donec varius tincidunt odio id porta. Donec luctus pulvinar velit, 
+          ac rutrum tortor tincidunt in.
+        </p>
+        <ul className="calc-list">
+          <li>{categoryData.key1}</li>
+          <li>{categoryData.key1}</li>
+          <li>{categoryData.key1}</li>
+        </ul>
+      </div>
+    );
+  }
+};
 
 export default CalcSummary;

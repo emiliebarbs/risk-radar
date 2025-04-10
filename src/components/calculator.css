@@ -25,6 +25,7 @@
     border-top: 2px solid black;
     border-right: 1px solid black;
     background-color: salmon;
+    transition: background-color 0.3s;
     
 }
 
