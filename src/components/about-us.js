@@ -16,9 +16,9 @@ const AboutUs = () => {
         </p>
         <p>Our Team Members:</p>
         <ul className="about-list">
-          <li>Colm Nkposong: Data Management, GIS Development, Calculator Methodology</li>
-          <li>Lucas Williamson: Data Management, GIS Development, Web Deployment</li>
-          <li>Emilie Barbattini: Data Management, Front-End Development, Web Deployment</li>
+          <li>Colm Nkposong: Data Engineer, GIS Development, Calculator Methodology</li>
+          <li>Lucas Williamson: GIS Development, AI Development, Web Deployment</li>
+          <li>Emilie Barbattini: Project Manager, Front-End Development, Web Deployment</li>
           <li>Michael Vanner: UX/UI Prototyping, Front-End Development</li>
           <li>Max Gong: UX/UI Prototyping, Front-End Development</li>
         </ul>
