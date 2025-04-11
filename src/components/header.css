@@ -36,11 +36,10 @@ html, body {
   }
   
   .logo {
-    height: 40px; 
+    height: 50px; 
     cursor: pointer;
     padding: 0;
     display: block;
-    box-shadow: 0 8px 16px rgba(56, 43, 43, 0.4);
 
   }
   .text-shadow {

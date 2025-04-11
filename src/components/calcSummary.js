@@ -86,48 +86,51 @@ const CalcSummary = ({ selectedCity, setShowCalcSummary, categoryClicked }) => {
     setShowCalcSummary(false);
   };
 
-  // --- Draggable Header Setup ---
-  const containerRef = useRef(null);
-  const [dragging, setDragging] = useState(false);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+// --- Draggable Header Setup ---
+const containerRef = useRef(null);
+const [dragging, setDragging] = useState(false);
+const [offset, setOffset] = useState({ x: 0, y: 0 });
+const [position, setPosition] = useState(() => {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  return { x: vw / 2 - 200 + 400, y: vh / 2 - 200 + 75}; // adjust based on modal size
+});
 
-  // Start dragging: calculate offset between mouse and container position
-  const handleMouseDown = useCallback((e) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-      setDragging(true);
-    }
-  }, []);
+const handleMouseDown = useCallback((e) => {
+  if (containerRef.current) {
+    const rect = containerRef.current.getBoundingClientRect();
+    setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setDragging(true);
+  }
+}, []);
 
-  // Stop dragging
-  const handleMouseUp = useCallback(() => {
-    setDragging(false);
-  }, []);
+const handleMouseMove = useCallback((e) => {
+  if (dragging) {
+    const newX = e.clientX - offset.x;
+    const newY = e.clientY - offset.y;
+    setPosition({ x: newX, y: newY });
+  }
+}, [dragging, offset]);
 
-  // Move container based on current mouse position and initial offset
-  const handleMouseMove = useCallback((e) => {
-    if (dragging && containerRef.current) {
-      containerRef.current.style.position = 'absolute';
-      containerRef.current.style.left = `${e.clientX - offset.x}px`;
-      containerRef.current.style.top = `${e.clientY - offset.y}px`;
-    }
-  }, [dragging, offset]);
+const handleMouseUp = useCallback(() => {
+  setDragging(false);
+}, []);
 
-  useEffect(() => {
-    if (dragging) {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
-    } else {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    }
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [dragging, handleMouseMove, handleMouseUp]);
-  // --- End Draggable Header Setup ---
+useEffect(() => {
+  if (dragging) {
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+  } else {
+    window.removeEventListener("mousemove", handleMouseMove);
+    window.removeEventListener("mouseup", handleMouseUp);
+  }
+
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    window.removeEventListener("mouseup", handleMouseUp);
+  };
+}, [dragging, handleMouseMove, handleMouseUp]);
+// --- End Draggable Header Setup ---
 
   const headerText = !categoryClicked
     ? `Risk Statistics for ${selectedCity}`
@@ -136,7 +139,14 @@ const CalcSummary = ({ selectedCity, setShowCalcSummary, categoryClicked }) => {
   // Render the component based on whether categoryClicked exists or not
   if (!categoryClicked) {
     return (
-      <div className="calc-summary" ref={containerRef}>
+      <div
+        className="calc-summary"
+        ref={containerRef}
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          cursor: dragging ? "grabbing" : "grab"
+        }}
+      >
         {/* Draggable header */}
         <div className="draggable-header" onMouseDown={handleMouseDown}>
           <div className="cancel-container">
@@ -161,7 +171,14 @@ const CalcSummary = ({ selectedCity, setShowCalcSummary, categoryClicked }) => {
     );
   } else {
     return (
-      <div className="calc-summary" ref={containerRef}>
+      <div
+        className="calc-summary"
+        ref={containerRef}
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          cursor: dragging ? "grabbing" : "grab"
+        }}
+      >
         {/* Draggable header */}
         <div className="draggable-header" onMouseDown={handleMouseDown}>
           <div className="cancel-container">
@@ -179,8 +196,8 @@ const CalcSummary = ({ selectedCity, setShowCalcSummary, categoryClicked }) => {
         </p>
         <ul className="calc-list">
           <li>{categoryData.key1}</li>
-          <li>{categoryData.key1}</li>
-          <li>{categoryData.key1}</li>
+          <li>{categoryData.key2}</li>
+          <li>{categoryData.key3}</li>
         </ul>
       </div>
     );

@@ -41,7 +41,7 @@ const Header = ({
         <img 
           className='logo' 
           alt="risk-radar-logo"
-          src={require("../images/logo_test.png")} 
+          src={require("../images/logo.png")} 
           onClick={() => clickMap()}
         />
         <h1 className="light-italic text-shadow" onClick={() => clickMap()}>

@@ -2,15 +2,24 @@
 
 /* Container for the Calculator Summary component */
 .calc-summary {
-  border: 1px solid black;         /* Border for separation */
-  border-radius: 8px;              /* Rounded corners */
-  padding: 20px;                   /* Internal spacing */
-  max-width: 400px;                /* Reduced size for a smaller box */
-  margin: 20px auto;               /* Centered horizontally with vertical margin */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle drop shadow */
+  position: fixed; /* Enables dragging relative to viewport */
+  top: 0;
+  left: 0;
+  transform: translate(0, 0); /* Starting transform */
+  
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px; /* Use width instead of max-width + margin auto */
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;                /* Increased font size by 2px */
+  font-size: 16px;
+  transition: transform 0.1s ease;
+  z-index: 9999;
 }
+
 
 /* Container for the header and the cancel (close) button */
 .cancel-container {

@@ -1,51 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+  background-color: #FFE6E3;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
 .methodology-placeholder {
-    font-size: 40px;
-    text-align: center;
-    
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 60px 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
 
-  .methodology-placeholder h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
+.methodology-placeholder:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
 
-  .methodology-placeholder h3 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
+.methodology-placeholder h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #222;
+}
 
-  .methodology-details {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    text-align: left;
-  }
-  
-  .methodology-details p {
-    margin-bottom: 15px;
-  }
-  
-  .methodology-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .methodology-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .methodology-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #333;
-  }
-  
+.methodology-placeholder h3 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #444;
+}
+
+.methodology-details {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #444;
+  text-align: left;
+}
+
+.methodology-details p {
+  margin-bottom: 20px;
+}
+
+.methodology-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.methodology-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  font-size: 15.5px;
+  color: #333;
+}
+
+.methodology-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #E74C3C;
+  font-size: 20px;
+  line-height: 1;
+}
