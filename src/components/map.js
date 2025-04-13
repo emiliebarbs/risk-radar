@@ -2,7 +2,19 @@ import './map.css';
 
 const Map = ({ selectedCity }) => {
 
-  if (selectedCity === "Los Angeles") {
+  if (selectedCity === "Denver" || selectedCity === "") {
+
+    return (
+      <div className="map-container">
+        <iframe 
+          title="Denver Risk Map" 
+          src="https://wa.lrcog.org/portal/apps/View/index.html?appid=5d424a2e9ec54639a1de4e515a5f175e">
+        </iframe>
+      </div>
+    )
+ 
+  }
+  else if (selectedCity === "Los Angeles") {
 
     return (
       <div className="map-container">
@@ -14,19 +26,6 @@ const Map = ({ selectedCity }) => {
     )
 
 } 
-
-  else if (selectedCity === "Denver") {
-
-    return (
-      <div className="map-container">
-        <iframe 
-          title="Denver Risk Map" 
-          src="https://wa.lrcog.org/portal/apps/View/index.html?appid=5d424a2e9ec54639a1de4e515a5f175e">
-        </iframe>
-      </div>
-    );
-
-  }
 
   else if (selectedCity === "Tampa") {
 
@@ -40,11 +39,6 @@ const Map = ({ selectedCity }) => {
     );
 
   }
-
-
-  
-
-
   
 }
 
