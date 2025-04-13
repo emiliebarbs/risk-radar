@@ -37,8 +37,7 @@ const App = () => {
 
      />
     <Map
-    methodsClicked={methodsClicked}
-    aboutUsClicked={aboutUsClicked}
+    selectedCity={selectedCity}
     />
 
       {showCalcSummary && selectedCity ? (
