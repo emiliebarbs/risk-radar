@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import Chatbot from './chatbot';
 import './header.css';
 
 const Header = ({ 
@@ -7,7 +8,10 @@ const Header = ({
   aboutUsClicked, setAboutUsClicked,
   mapClicked, setMapClicked,
   showCalcSummary, setShowCalcSummary,
-  setSelectedCity, setCategoryClicked
+  setSelectedCity, setCategoryClicked,
+  chatbotClicked, setChatbotClicked,
+   chatbotInput, setChatbotInput,
+   question, setQuestion
 }) => {
 
   const clickMethods = () => {
@@ -35,6 +39,19 @@ const Header = ({
     }
   };
 
+  const handleChatbotInputChange = (e) => {
+      const text = e.currentTarget.value
+      setChatbotInput(text)
+  }
+
+  const handleChatbotClicked = () => {
+    if (!chatbotInput.trim()) return;
+    setChatbotClicked(true);
+    setQuestion(chatbotInput)
+  };
+
+
+
   return (
     <header>
       <div className='logo-title'>
@@ -53,12 +70,23 @@ const Header = ({
         <div className="chatbot-wrapper">
           <input 
             className="chatbot-input" 
-            placeholder="  Ask a question..." 
+            placeholder="  Ask a question..."
+            value={chatbotInput}
+            onChange={handleChatbotInputChange}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleChatbotClicked();}}}
           />
-          <button className="chatbot-button">
+          <button className="chatbot-button" onClick={() => handleChatbotClicked()}>
             <FontAwesomeIcon icon={faArrowUp} />
           </button>
         </div>
+        {chatbotClicked ? 
+         <Chatbot
+            question={question}
+            setChatbotClicked={setChatbotClicked}
+            setChatbotInput={setChatbotInput} />
+            : null}
       </div>
 
       <div className="info-dropdowns">

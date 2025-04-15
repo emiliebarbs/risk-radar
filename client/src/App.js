@@ -18,6 +18,9 @@ const App = () => {
   const [showCalcSummary, setShowCalcSummary] = React.useState(false)
   const [categoryClicked, setCategoryClicked] = React.useState("")
 
+  const [chatbotClicked, setChatbotClicked] = React.useState(false)
+  const [chatbotInput, setChatbotInput] = React.useState("")
+  const [question, setQuestion] = React.useState("")
 
 
   if (mapClicked) {
@@ -34,8 +37,15 @@ const App = () => {
     setShowCalcSummary={setShowCalcSummary}
     setSelectedCity={setSelectedCity}
     setCategoryClicked={setCategoryClicked}
+    chatbotClicked={chatbotClicked}
+    setChatbotClicked={setChatbotClicked}
+    chatbotInput={chatbotInput}
+    setChatbotInput={setChatbotInput}
+    question={question}
+    setQuestion={setQuestion}
 
      />
+     
     <Map
     selectedCity={selectedCity}
     />
@@ -71,6 +81,12 @@ const App = () => {
       setShowCalcSummary={setShowCalcSummary}
       setSelectedCity={setSelectedCity}
       setCategoryClicked={setCategoryClicked}
+      chatbotClicked={chatbotClicked}
+      setChatbotClicked={setChatbotClicked}
+      chatbotInput={chatbotInput}
+      setChatbotInput={setChatbotInput}
+      question={question}
+      setQuestion={setQuestion}
       
        />
      
@@ -95,6 +111,12 @@ const App = () => {
       setShowCalcSummary={setShowCalcSummary}
       setSelectedCity={setSelectedCity}
       setCategoryClicked={setCategoryClicked}
+      chatbotClicked={chatbotClicked}
+      setChatbotClicked={setChatbotClicked}
+      chatbotInput={chatbotInput}
+      setChatbotInput={setChatbotInput}
+      question={question}
+      setQuestion={setQuestion}
        />
      
       <AboutUs />
