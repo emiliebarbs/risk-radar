@@ -24,7 +24,7 @@ app.post('/api/risk-insight', async (req, res) => {
     const prompt = `Our Risk Radar project analyzes city-level risks. Based on our dataset, give me a short summary of current risks or challenges in ${city}. Focus on climate, disaster, or socioeconomic risks if relevant.`;
 
     const completion = await openai.createChatCompletion({
-      model: 'gpt-3.5-turbo', // or 'gpt-4'
+      model: 'gpt-4o-mini', // or 'gpt-3-turbo'
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.7,
     });
