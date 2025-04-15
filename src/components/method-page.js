@@ -13,7 +13,6 @@ const Methodology = () => {
         <>
         <div className="methodology-placeholder" style={style}>
             <h2>Methodology</h2>
-            <h3>Header</h3>
             <div className="methodology-details">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum odio ut placerat viverra. 
                 Maecenas nec ipsum enim. Sed id iaculis mi. Aliquam nec finibus orci. Etiam pulvinar nulla nisi, eu imperdiet felis finibus vitae. Donec varius tincidunt odio id porta. Donec luctus pulvinar velit, ac rutrum tortor tincidunt in. 
