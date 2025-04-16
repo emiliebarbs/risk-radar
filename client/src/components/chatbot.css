@@ -1,0 +1,8 @@
+.chatbot-response-box {
+    width: 650px;
+    height: auto;
+    background-color: lightgray;
+    position: absolute;
+    top: 80px;
+}
+

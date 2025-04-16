@@ -1,0 +1,105 @@
+/* calcSummary.css */
+
+/* Container for the Calculator Summary component */
+.calc-summary {
+  position: fixed; /* Enables dragging relative to viewport */
+  top: 0;
+  left: 0;
+  transform: translate(0, 0); /* Starting transform */
+  
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px; /* Use width instead of max-width + margin auto */
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+}
+
+
+/* Container for the header and the cancel (close) button */
+.cancel-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Places header on the left and button on the right */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Original styling for the header text within the cancel container, now with increased font size */
+.cancel-container h1 {
+  text-align: center;
+  font-size: 18px;                /* Increased from 20px to 22px */
+  margin: 1;
+  color: black;
+}
+
+.draggable-header {
+  background-color: lightgray;      /* Gray background for the draggable area */
+  padding: 10px;
+  user-select: none;
+  height: 45px;
+  margin: -20px -20px 10px -20px; 
+  border-bottom: 1px solid black; 
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1); 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;    /* Prevents text from being accidentally selected */
+}
+
+/* Styling for the cancel button */
+.cancel-button {
+  position: absolute;       /* Remove the button from the normal flow */
+  top: 10px;                /* Fixed distance from the top */
+  right: 10px;              /* Fixed distance from the right */
+  background-color: lightgray;
+  border: none;
+  border-radius: 50%;       /* Circular button */
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  transform: translate(19px, -20px); /* Desired offset */
+}
+
+/* Keep the button in the same position on focus or active */
+.cancel-button:focus,
+.cancel-button:active {
+  outline: none;           /* Remove default focus outline */
+  top: 10px;
+  right: 10px;
+  transform: translate(19px, -20px);
+}
+
+/* Adjust the icon inside the cancel button if needed */
+.cancel-icon {
+  transform: translate(-5.5px, -2.6px); /* Adjust as needed for spacing */
+}
+
+/* Change the cancel button color on hover */
+.cancel-button:hover {
+  background-color: #adadad;
+}
+
+/* Paragraph styling inside the calc-summary */
+.calc-summary p {
+  color: #666;             /* Softer text color */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Styling for the list of statistics */
+.calc-list {
+  list-style-type: disc;    /* Use bullet points */
+  padding-left: 20px;       /* Indent list items */
+}
+
+/* Styling for each list item */
+.calc-list li {
+  margin-bottom: 5px;
+  color: #444;             /* A darker shade for list item text */
+}
