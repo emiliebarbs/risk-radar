@@ -8,7 +8,7 @@ const Map = ({ selectedCity }) => {
       <div className="map-container">
         <iframe 
           title="Denver Risk Map" 
-          src="https://wa.lrcog.org/portal/apps/View/index.html?appid=5d424a2e9ec54639a1de4e515a5f175e">
+          src="https://ucboulder.maps.arcgis.com/apps/mapviewer/index.html?webmap=6f2e7a7bfec64f029de56b58b69aee54">
         </iframe>
       </div>
     )
@@ -20,7 +20,7 @@ const Map = ({ selectedCity }) => {
       <div className="map-container">
         <iframe 
           title="Los Angeles Risk Map" 
-          src="https://wa.lrcog.org/portal/apps/View/index.html?appid=5d424a2e9ec54639a1de4e515a5f175e">
+          src="https://ucboulder.maps.arcgis.com/apps/mapviewer/index.html?webmap=474587d54fe34706978ca4af36e3ae5b">
         </iframe>
       </div>
     )
@@ -33,7 +33,7 @@ const Map = ({ selectedCity }) => {
       <div className="map-container">
         <iframe 
           title="Tampa Risk Map" 
-          src="https://wa.lrcog.org/portal/apps/View/index.html?appid=5d424a2e9ec54639a1de4e515a5f175e">
+          src="https://ucboulder.maps.arcgis.com/apps/mapviewer/index.html?webmap=f6ddae034fa94b4a903b5cbb9dabf32f">
         </iframe>
       </div>
     );

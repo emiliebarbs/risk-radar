@@ -5,6 +5,7 @@
   position: fixed; /* Enables dragging relative to viewport */
   top: 0;
   left: 0;
+  height: 300px;
   transform: translate(0, 0); /* Starting transform */
   
   border: 1px solid black;

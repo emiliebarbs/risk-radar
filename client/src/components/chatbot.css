@@ -1,8 +1,34 @@
 .chatbot-response-box {
-    width: 650px;
+    width: 400px;
     height: auto;
-    background-color: lightgray;
+    background-color: #eeeeee;
     position: absolute;
-    top: 80px;
+    top: 66.5px;
+    transform: translate(5px, 0px);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    border: 1px solid rgba(0, 0, 0, 0.422);
+
 }
 
+.chatbot-response-text {
+    padding-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.chatbot-close-button {
+    border-radius: 10px;
+    background-color: #dddddd;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'DM Sans', 'sans-serif';
+    padding: 10px;
+  
+}
+
+.chatbot-close-button:hover {
+    background-color: #cbcbcb;
+}
