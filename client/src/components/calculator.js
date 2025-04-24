@@ -7,25 +7,25 @@ const Calculator = ({ selectedCity, setCategoryClicked }) => {
     const scoreInformation = {
         
         "Los Angeles": {
-            "crime": 0,
-            "costOfLiving": 2,
-            "infastructure": 10,
-            "naturalDisaster": 7,
-            "total": 7
+            "crime": 139,
+            "costOfLiving": 172,
+            "infastructure": 23,
+            "naturalDisaster": 100,
+            "total": 145.1  
         },
         "Denver": {
-            "crime": 7,
-            "costOfLiving": 3,
-            "infastructure": 7,
-            "naturalDisaster": 9,
-            "total": 9
+            "crime": 280,
+            "costOfLiving": 123.3,
+            "infastructure": 27,
+            "naturalDisaster": 93.6,
+            "total": 158.6
         },
         "Tampa": {
-            "crime": 5,
-            "costOfLiving": 8,
-            "infastructure": 4,
-            "naturalDisaster": 8,
-            "total": 4
+            "crime": 151,
+            "costOfLiving": 108,
+            "infastructure": 50,
+            "naturalDisaster": 99.56,
+            "total": 137.1
         },
     }
     
