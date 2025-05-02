@@ -9,7 +9,7 @@ in an interactive and visually appealing website using Figma, ArcGIS Pro & Onlin
 
 ### Team Members
 Emilie Barbattini: Project Manager, Front-End Development, Web Deployment <br>
-Colm Nkposong: Data Engineer, GIS Development, Calculator Methodology <br>
+Colm Nkposong: Data Engineer, GIS Analyst, Calculator Methodology <br>
 Lucas Williamson: GIS Development, AI Development, Web Deployment <br>
 Michael Vanner: UX/UI Prototyping, Front-End Development <br>
 Max Gong: UX/UI Prototyping, Front-End Development
